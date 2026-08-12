@@ -1,0 +1,147 @@
+generated: '2026-08-12'
+method: probed
+source: live HTTPS probes of every DustPhotonics / Credo host reachable from apis.yml
+note: >-
+  Every /.well-known/ path probed returned 404 on every host. No WellKnown, SecurityTxt,
+  APICatalog or AgentCard pointer is emitted in apis.yml — this file records a verified
+  absence, not a served discovery surface. DustPhotonics has no API host of its own;
+  www.dustphotonics.com 301s into credosemi.com following the May 2026 acquisition, so
+  the acquirer host was probed as well.
+hosts:
+- host: https://www.dustphotonics.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://dustphotonics.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+- host: https://credosemi.com
+  note: acquirer host; dustphotonics.com redirects here
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+contract_discovery:
+  note: >-
+    STEP 0b contract discovery run in full before recording "no spec". No REST OpenAPI,
+    no GraphQL endpoint, no MCP server and no A2A agent card exist on any host.
+  probes:
+  - url: https://www.dustphotonics.com/openapi.json
+    status: 404
+  - url: https://www.dustphotonics.com/swagger.json
+    status: 404
+  - url: https://www.dustphotonics.com/api-docs
+    status: 404
+  - url: https://credosemi.com/openapi.json
+    status: 404
+  - url: https://credosemi.com/swagger.json
+    status: 404
+  - url: https://credosemi.com/api-docs
+    status: 404
+  - url: https://api.dustphotonics.com/
+    status: 0
+    note: NXDOMAIN — no API host exists
+  - url: https://docs.dustphotonics.com/
+    status: 0
+    note: NXDOMAIN — no docs host exists
+  - url: https://developer.dustphotonics.com/
+    status: 0
+    note: NXDOMAIN — no developer host exists
+  - url: https://api.credosemi.com/
+    status: 0
+    note: NXDOMAIN
+  - url: https://developer.credosemi.com/
+    status: 0
+    note: NXDOMAIN
+  - url: https://credosemi.com/support/
+    status: 404
+  github:
+  - url: https://api.github.com/users/Dustphotonics
+    status: 200
+    note: >-
+      GitHub organization github.com/Dustphotonics exists (created 2025-08-20) but has
+      0 public repositories. No GitHubOrganization pointer emitted — an empty org is not
+      an open-source surface.
+  - url: https://api.github.com/orgs/Dustphotonics/repos
+    status: 200
+    note: 'Repository listing returned an empty array — confirms public_repos: 0.'
+  registries:
+    note: >-
+      Public package registries queried for any first-party DustPhotonics client library.
+      Every registry answered a miss, so no packages/ artifact and no Packages or SDKs
+      pointer is emitted — a fabless chip company ships silicon, not SDKs.
+    probes:
+    - url: https://registry.npmjs.org/dustphotonics
+      status: 404
+    - url: https://registry.npmjs.org/-/v1/search?text=dustphotonics
+      status: 200
+      note: 'Search returned total: 0 — no npm package mentions DustPhotonics.'
+    - url: https://pypi.org/pypi/dustphotonics/json
+      status: 404
+    - url: https://rubygems.org/api/v1/gems/dustphotonics.json
+      status: 404
+    - url: https://crates.io/api/v1/crates/dustphotonics
+      status: 403
+      note: crates.io rejects unauthenticated agents; no Rust crate expected or found.
+  llms_txt:
+    note: >-
+      The one machine-readable document DustPhotonics still serves is a Yoast SEO v28.0
+      generated llms.txt, saved verbatim at llms/dustphotonics-llms.txt. It is ORPHANED:
+      it still answers 200 from the original origin, but every URL it lists now 301s into
+      credosemi.com. It is a stale SEO artifact left behind by the acquisition, not a
+      maintained agent surface, and it describes marketing pages — no API, no spec, no
+      developer content.
+    probes:
+    - url: https://www.dustphotonics.com/llms.txt
+      status: 200
+    - url: https://www.dustphotonics.com/products/carmel4/
+      status: 301
+      note: redirects to https://credosemi.com/products/silicon-photonics/carmel4/
+    - url: https://www.dustphotonics.com/near-package-optics/
+      status: 301
+      note: redirects to https://credosemi.com/blogs/near-package-optics/
+    - url: https://www.dustphotonics.com/sitemap_index.xml
+      status: 301
+      note: redirects to https://credosemi.com/sitemap_index.xml
+    - url: https://www.dustphotonics.com/robots.txt
+      status: 200
+    - url: https://credosemi.com/llms.txt
+      status: 404
+      note: the acquirer publishes no llms.txt of its own
+reverified: '2026-08-12'

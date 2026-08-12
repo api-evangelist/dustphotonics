@@ -1,8 +1,19 @@
 aid: dustphotonics
-name: Dustphotonics
-description: 'Dustphotonics is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+name: DustPhotonics
+description: >-
+  DustPhotonics is a fabless silicon photonics company founded in Israel in 2017 by Ben Rubovitch,
+  Kobi Hasharoni and Amir Geron, building Photonic Integrated Circuit (SiPho PIC) engines and
+  optical interconnect components for hyperscale and AI data centers. Its product line covers
+  integrated laser engines (Oz4, Oz8, Carmel4, Carmel8) and external laser chips (Kfir, Kfir200,
+  Tamar, Tamar200) spanning 400G to 1.6T, built around a proprietary L3C low-loss laser coupling
+  technique that integrates lasers, modulators and photodetectors onto a single chip for optical
+  transceivers, active optical cables and near-package optics. Credo Technology Group agreed to
+  acquire DustPhotonics in April 2026 and completed the acquisition on 28 May 2026; the
+  dustphotonics.com site now redirects into credosemi.com. The company sells silicon and optical
+  hardware to system and transceiver makers and has never operated a public developer program,
+  API, SDK or documentation portal.
 url: https://raw.githubusercontent.com/api-evangelist/dustphotonics/refs/heads/main/apis.yml
+image: https://www.dustphotonics.com/wp-content/uploads/2022/05/logo.svg
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +23,14 @@ created: '2026-08-12'
 modified: '2026-08-12'
 tags:
 - Company
+- Silicon Photonics
+- Semiconductors
+- Optical Interconnect
+- Photonic Integrated Circuits
+- Data Center Infrastructure
+- AI Infrastructure
+- Optical Transceivers
+- Hardware
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -20,4 +39,54 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.nasdaqprivatemarket.com/
+  url: https://www.dustphotonics.com/
+- type: LLMsTxt
+  url: llms/dustphotonics-llms.txt
+- type: DomainSecurity
+  url: security/dustphotonics-domain-security.yml
+x-enrichment:
+  date: '2026-08-12'
+  status: nochange
+  artifacts_added: 0
+  artifacts_updated: 1
+  artifacts_on_disk: 3
+  pass: local-v1
+  note: >-
+    Re-run of a pass completed the same day. Every prior finding was independently
+    re-probed and held. This round added no new artifact and no new pointer: package
+    registries (npm, PyPI, RubyGems, crates.io) all missed, the GitHub org listing
+    confirmed zero public repositories, probe-security-programs.py found no
+    vulnerability-disclosure program and no trust center, and repair-api-bases.py
+    reports no base to repair because apis[] is legitimately empty. The evidence was
+    appended to well-known/dustphotonics-well-known.yml.
+x-coverage:
+  state: none
+  reason: defunct
+  detail: >-
+    Every page on www.dustphotonics.com 301s wholesale into credosemi.com after Credo
+    completed its acquisition on 2026-05-28, and the underlying business is a fabless
+    silicon photonics chip maker that never shipped an API, SDK or developer portal —
+    the only document still answering from the original origin is an orphaned Yoast SEO
+    llms.txt whose own links all 301 away to the acquirer.
+  evidence:
+  - url: https://www.dustphotonics.com/
+    status: 301
+  - url: https://www.dustphotonics.com/products/
+    status: 301
+  - url: https://credosemi.com/products/silicon-photonics/
+    status: 200
+  - url: https://api.dustphotonics.com/
+    status: 0
+  - url: https://www.dustphotonics.com/openapi.json
+    status: 404
+  - url: https://www.dustphotonics.com/.well-known/agent-card.json
+    status: 404
+  - url: https://www.dustphotonics.com/llms.txt
+    status: 200
+  checked: '2026-08-12'
+x-acquisition:
+  acquirer: Credo Technology Group Holding Ltd
+  acquirer_url: https://credosemi.com/
+  announced: '2026-04-13'
+  completed: '2026-05-28'
+  source: https://www.businesswire.com/news/home/20260527239270/en/Credo-Completes-Acquisition-of-DustPhotonics
