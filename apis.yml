@@ -13,6 +13,17 @@ description: >-
   hardware to system and transceiver makers and has never operated a public developer program,
   API, SDK or documentation portal.
 url: https://raw.githubusercontent.com/api-evangelist/dustphotonics/refs/heads/main/apis.yml
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 image: https://www.dustphotonics.com/wp-content/uploads/2022/05/logo.svg
 x-type: company
 x-source: harvest:secondary-market
