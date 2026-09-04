@@ -24,6 +24,19 @@ deliveryModel:
   - none
   generated: '2026-08-28'
   method: derived
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source:
+  - security
+  - {url: 'https://www.dustphotonics.com/', status: 301, note: 'declared website redirects to https://credosemi.com/products/silicon-photonics/ — a different registrable domain (dustphotonics.com -> credosemi.com), possible rename or acquisition (probed 2026-09-03, roadmap#169)'}
+  generated: '2026-09-02'
+  method: derived
 image: https://www.dustphotonics.com/wp-content/uploads/2022/05/logo.svg
 x-type: company
 x-source: harvest:secondary-market
